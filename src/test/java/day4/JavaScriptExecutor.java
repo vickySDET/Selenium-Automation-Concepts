@@ -10,7 +10,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class JavaScriptExecutor {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 
 		
 		    WebDriverManager.chromedriver().setup();
@@ -36,6 +36,14 @@ public class JavaScriptExecutor {
 	      js.executeScript("arguments[0].click()", radiobtn);
 	      
 	      System.out.println("Successfully click using javaScriptExecutor ");
+	      
+	     WebElement ele=driver.findElement(By.xpath("//h2[text()='Static Web Table']"));
+	     
+	     js.executeScript("arguments[0].scrollIntoView(true);", ele);
+	     
+	     Thread.sleep(3000);
+	     
+	     System.out.println(js.executeScript("return window.pageYOffset;"));
 	      
 	      
 	      driver.quit();
