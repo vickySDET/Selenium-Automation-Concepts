@@ -1,4 +1,4 @@
-package day4;
+package seleniumConcepts;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -37,6 +37,9 @@ public class JavaScriptExecutor {
 	      
 	      System.out.println("Successfully click using javaScriptExecutor ");
 	      
+	      
+	      //Scrolling to the particular Element 
+	      
 	     WebElement ele=driver.findElement(By.xpath("//h2[text()='Static Web Table']"));
 	     
 	     js.executeScript("arguments[0].scrollIntoView(true);", ele);
@@ -44,6 +47,11 @@ public class JavaScriptExecutor {
 	     Thread.sleep(3000);
 	     
 	     System.out.println(js.executeScript("return window.pageYOffset;"));
+	     
+	     //Zooming the page as per user requirement 
+	     js.executeScript("document.body.style.zoom='50%';");
+	     
+	     Thread.sleep(4000);
 	      
 	      
 	      driver.quit();

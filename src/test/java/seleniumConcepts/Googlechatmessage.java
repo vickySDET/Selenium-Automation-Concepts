@@ -1,4 +1,4 @@
-package day4;
+package seleniumConcepts;
 
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
